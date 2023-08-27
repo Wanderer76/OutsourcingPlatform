@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый старт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<div class="auth-wrapper">
+    <div class="sign-in">
+        <div class="sign-in__content">
+            <a href="#" class="logo-link">
+                <img class="logo" src="../images/logo-auth-white.svg" alt="Логотип платформы Первый Старт">
+            </a>
+            <h1>Первый старт —<br>— в вашу карьеру</h1>
+            <p>Помогаем талантливым начинающим исполнителям и потенциальным заказчикам найти друг друга</p>
+        </div>
+        <form class="sign-in__form">
+            <h2>Login</h2>
+            <p>У вас нет аккаунта? <a href="#" class="sign-in__link">Зарегистрируйтесь</a></p>
+            <div class="auth__field login">
+                <p>Email</p>
+                <input class="auth_input" type="email" placeholder="your@email.com" name="user-email" id="user-email" />
+                <label class="sign-in__label visually-hidden" for="user-email">Email address</label>
+                <p class="input-error__text visually-hidden" id="email-error">Error text (Текст ошибки)!</p>
+            </div>
+            <div class="auth__field password error">
+                <p>Пароль</p>
+                <input class="auth_input" type="password" placeholder="password" name="user-password" id="user-password" value="qwerty123245"/>
+                <label class="sign-in__label visually-hidden" for="user-password">Password</label>
+                <p class="input-error__text" id="password-error">Error text (Текст ошибки)!</p>
+            </div>
+            <p>Забыли логин или пароль? <a href="#" class="sign-in__link">Восстановить</a></p>
+            <button class="auth__btn" type="submit">Войти</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

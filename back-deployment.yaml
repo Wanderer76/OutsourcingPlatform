@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  outsourceplatformapp
+  namespace: utyata-project
+  labels:
+    app:  outsourceplatformapp
+    own: Utyata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: outsourceplatformapp
+  template:
+    metadata:
+      labels:
+        project: outsourceplatformapp
+        app: outsourceplatformapp
+        service: back
+    spec:
+      containers:
+        - name: outsourceplatform
+          image: hub.66bit.ru/urfu2022/rtf/outsourcing-platform/backend #artyomte1243/outsourceplatformapp
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+            - name: DockerConnection
+              value: Host=database;Port=5432;Database=Test;Username=postgres;Password=1
+      imagePullSecrets:
+          - name: outsorce-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: back
+  namespace: utyata-project
+spec:
+  selector:
+    project: outsourceplatformapp
+  type: ClusterIP
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: back-listener
+    protocol: TCP
+    port: 80
+    targetPort: 80
+   # nodePort: 30007

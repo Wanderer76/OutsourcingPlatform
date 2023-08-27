@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  outsourceplatformapp:
+    image: ${DOCKER_REGISTRY-}outsourceplatformapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - "db_auth"
+
+  db_auth:
+    container_name: database
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=Test
+    image: postgres:14.3-alpine
+    expose:
+      - "5432"
+  
+  client:
+    build:
+      context: ../front-end
+      dockerfile: ../front-end/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5288

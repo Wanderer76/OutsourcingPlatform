@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый старт</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+  <div class="logo">
+    <a href="#" class="logo-link header-logo">
+      <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="auth-link" href="#"><div class="nav-username">@alex_ovchinnik_off</div></a>
+  </div>
+
+  <input class="side-menu" type="checkbox" id="side-menu"/>
+  <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+  <nav class="nav">
+    <ul class="nav-menu">
+      <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+      <li><a href="#">О системе</a></li>
+      <li><a href="#">Исполнители</a></li>
+      <li><a href="#">Заказы</a></li>
+      <li><a class="disabled" href="#">Конкурсы*</a></li>
+      <li><a class="disabled" href="#">Вакансии*</a></li>
+      <li><a class="disabled" href="#">Стажировки*</a> </li>
+      <li><a href="#">*Скоро на платформе</a></li>
+      <li class="nav-for-mobile"><a href="#">Выход</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="main">
+  <div class="user-personal">
+    <div class="user-card">
+      <div class="user-avatar">
+        <img class="avatar" src="../images/empty-user.svg" alt="Аватар пользователя">
+      </div>
+
+      <div class="user-data">
+        <p class="user-name">Овчинников Александр Сергеевич</p>
+        <div class="user-data row-1">
+          <p>Возраст: 23</p>
+          <p>Город: Екатеринбург</p>
+        </div>
+        <div class="user-data row-2">
+          <div class="user-data column-1">
+            <p>E-mail: <a href="mailto:flex-alex@mymail.com">flex-alex@mymail.com</a></p>
+            <p>Телефон: <a href="tel:+79143439889">+7 (914) 343-98-89</a></p>
+          </div>
+        </div>
+        <div class="last-row">
+          <div class="social-card">
+            <h2>Мои ссылки:</h2>
+            <div class="no-data">Нет данных нажмите кнопку "Редактировать", <br> чтобы добавить информацию о себе</div>
+          </div>
+          <input class="card-button user-button" type="button" value="Редактировать">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <section class="projects">
+    <h2 class="center">Мои заказы:</h2>
+    <div class="project-cards">
+      <div class="no-data">У вас пока нет заказов! <br> Для того, чтобы они появились, откликнитесь на них в разделе "Заказы" <br> Чтобы увеличить вероятность получения заказа, отредактируйте информацию о себе. <br> Добавьте данные о ваших навыках, описание о себе, о вашем образовании.</div>
+    </div>
+  </section>
+
+</div>
+</body>
+<footer class="main-footer">
+  <div class="footer-nav">
+    <a href="#">О системе</a>
+    <a href="#">Исполнители</a>
+    <a href="#">Заказы</a>
+    <a href="#">*Скоро на платформе</a>
+    <a class="disabled" href="#">Конкурсы*</a>
+    <a class="disabled" href="#">Вакансии*</a>
+    <a class="disabled" href="#">Стажировки*</a>
+  </div>
+  <div class="footer-logo">
+    <a class="footer-logo-link">
+      <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="copyright" href="#">Политика конфиденциальности</a>
+    <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+  </div>
+</footer>
+</html>
