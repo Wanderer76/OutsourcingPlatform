@@ -1,0 +1,114 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-client
+  namespace: utyata-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-client
+  template:
+    metadata:
+      labels:
+        project: react-client
+        app: react-client
+        service: front-client
+    spec:
+      containers:
+      - name: react-client
+        image: hub.66bit.ru/urfu2022/rtf/outsourcing-platform/frontend #artomte123/outsourceplatformapp-client
+        envFrom:
+         - configMapRef:
+             name: react-env
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+        - name: outsorce-secret
+          #protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-client
+  namespace: utyata-project
+spec:
+  selector:
+    project: react-client
+  type: ClusterIP
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: client-listener
+    protocol: TCP
+    port: 8080
+    targetPort: 3000
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+    #nodePort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-host
+  namespace: utyata-project
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+    nginx.org/client-max-body-size: "50m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/websocket-services: back
+    nginx.org/websocket-services: back
+    ingressclass.kubernetes.io/is-default-class: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: outsourcing.stk8s.66bit.ru #localhost
+    http:
+      paths:
+        - path: /api
+          pathType: Prefix
+          backend:
+            service:
+              name: back
+              port:
+                number: 80
+        - path: /notifications
+          pathType: Prefix
+          backend:
+            service:
+              name: back
+              port:
+                number: 80
+        - path: /chats
+          pathType: Prefix
+          backend:
+            service:
+              name: back
+              port:
+                number: 80
+        - path: /swagger
+          pathType: Prefix
+          backend:
+            service:
+              name: back
+              port:
+                number: 80  
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: front-client
+              port:
+                number: 8080
+        - path: /files
+          pathType: Prefix
+          backend:
+            service:
+              name: back
+              port:
+                number: 80

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый старт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+  <div class="logo">
+    <a href="#" class="logo-link header-logo">
+      <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <div class="dropdown">
+      <a class="auth-link dropbtn" href="#"><div class="nav-username">Вход</div></a>
+      <div class="dropdown-content">
+        <a href="#">Личный кабинет</a>
+        <a href="#">Выход</a>
+      </div>
+    </div>
+  </div>
+
+  <input class="side-menu" type="checkbox" id="side-menu"/>
+  <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+  <nav class="nav">
+    <ul class="nav-menu">
+      <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+      <li><a href="#">О системе</a></li>
+      <li><a href="#">Исполнители</a></li>
+      <li><a href="#">Заказы</a></li>
+      <li><a href="#">Личный кабинет</a></li>
+      <li class="nav-item-with-counter">
+        <div class="header-icon">
+          <img src="../images/messenger-header.svg">
+          <div class="counter-tag">4</div>
+        </div>
+        <a href="#">Сообщения</a>
+      </li>
+      <li class="nav-item-with-counter">
+        <div class="header-icon">
+          <img src="../images/notification-header.svg">
+          <div class="counter-tag">42</div>
+        </div>
+        <a href="#">Уведомления</a>
+      </li>
+      <li class="nav-for-mobile"><a href="#">Выход</a></li>
+    </ul>
+  </nav>
+</header>
+<section class="messenger">
+  <div class="messenger-window">
+    <div class="messenger-left-block">
+      <div class="search-chat">
+        <form id="search-chat">
+          <input type="text" placeholder="Поиск">
+          <button type="submit" class="visually-hidden"></button>
+        </form>
+      </div>
+      <div class="chats-overflow">
+        <div class="chat-list-results">
+          <p class="chat-list-header">Результаты поиска:</p>
+          <div class="chats-results">
+            <div class="chat-item chat-item-new">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Мария Вишневская</p>
+                    <div class="message-counter">22</div>
+                  </div>
+                  <p class="chat-item-time">14:22</p>
+                </div>
+                <p class="chat-item-company-name">Маринс-хоум Отель</p>
+                <p class="chat-item-message">У меня есть некоторые правки к версии, которую вы прислали мне вчера.</p>
+              </div>
+            </div>
+            <div class="chat-item">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Марина Логинова</p>
+                  </div>
+                </div>
+                <p class="chat-item-company-name">Студия №21</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-list-yours">
+          <p class="chat-list-header">Ваши чаты:</p>
+          <div class="chats-yours">
+            <div class="chat-item chat-item-new">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Мария Вишневская</p>
+                    <div class="message-counter">22</div>
+                  </div>
+                  <p class="chat-item-time">14:22</p>
+                </div>
+                <p class="chat-item-company-name">Маринс-хоум Отель</p>
+                <p class="chat-item-message">У меня есть некоторые правки к версии, которую вы прислали мне вчера.</p>
+              </div>
+            </div>
+            <div class="chat-item chat-item-new">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Вячеслав Корецкий</p>
+                    <div class="message-counter">2</div>
+                  </div>
+                  <p class="chat-item-time">вчера</p>
+                </div>
+                <p class="chat-item-company-name">Бейкер-Стрит Пекарня</p>
+                <p class="chat-item-message">Текст написанного сообщения. Данный текст есть сообщение.</p>
+              </div>
+            </div>
+            <div class="chat-item">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Денис Кривошевич</p>
+                  </div>
+                  <p class="chat-item-time">27 фев</p>
+                </div>
+                <p class="chat-item-company-name">СПО “Кант”</p>
+                <p class="chat-item-message">Вы: Да, я доделаю все до понедельника. Если у вас остались вопросы, напишите.</p>
+              </div>
+            </div>
+            <div class="chat-item">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Мария Вишневская</p>
+                  </div>
+                  <p class="chat-item-time">17 фев</p>
+                </div>
+                <p class="chat-item-company-name">Маринс-хоум Отель</p>
+                <p class="chat-item-message">Вы: Хорошо. До встречи)</p>
+              </div>
+            </div>
+            <div class="chat-item">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Артём Астахов</p>
+                  </div>
+                  <p class="chat-item-time">12/2022</p>
+                </div>
+                <p class="chat-item-company-name">Кафе “Аризона”</p>
+                <p class="chat-item-message">Вы: Хорошо</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-list-begin">
+          <p class="chat-list-header">Начать общение:</p>
+          <div class="chats-begin">
+            <div class="chat-item">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Артём Сулимов</p>
+                  </div>
+                </div>
+                <p class="chat-item-company-name">Студия Звукозаписи “Резонатор”</p>
+              </div>
+            </div>
+            <div class="chat-item">
+              <div class="chat-avatar">
+                <img src="../images/notification-avatar.svg">
+              </div>
+              <div class="chat-item-text-content">
+                <div class="chat-item-first-row">
+                  <div class="chat-item-name">
+                    <p class="chat-sender-name">Марина Логинова</p>
+                  </div>
+                </div>
+                <p class="chat-item-company-name">Студия №21</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="messenger-right-block">
+      <div class="opened-chat">
+        <div class="day-tag">12 февраля</div>
+        <div class="message-item">
+          <div class="chat-avatar">
+            <img src="../images/notification-avatar.svg">
+          </div>
+          <div class="message-item-text-block">
+            <div class="message-item-first-row">
+              <p class="message-item-sender-name">Мария Вишневская</p>
+              <p class="message-item-time">14:22</p>
+            </div>
+            <div class="message-item-company">Маринс-хоум Отель</div>
+            <div class="message-item__message-text">Я спросила. Вам кто-то из сотрудников должен был отправить все данные. Если будут вопросы — позвоните мне.</div>
+          </div>
+        </div>
+        <div class="message-item">
+          <div class="chat-avatar">
+            <img src="../images/notification-avatar.svg">
+          </div>
+          <div class="message-item-text-block">
+            <div class="message-item-first-row">
+              <p class="message-item-sender-name">Мария Вишневская</p>
+              <p class="message-item-time">08:22</p>
+            </div>
+            <div class="message-item-company">Маринс-хоум Отель</div>
+            <div class="message-item__message-text">Я спросила. Вам кто-то из сотрудников должен был отправить все данные</div>
+          </div>
+        </div>
+        <div class="message-item">
+          <div class="chat-avatar">
+            <img src="../images/notification-avatar.svg">
+          </div>
+          <div class="message-item-text-block">
+            <div class="message-item-first-row">
+              <p class="message-item-sender-name">Антон</p>
+              <p class="message-item-time">12:25</p>
+            </div>
+            <div class="message-item__message-text">Хорошо, тогда завтра пришлю вам на почту</div>
+          </div>
+        </div>
+        <div class="day-tag">17 февраля</div>
+        <div class="message-item">
+            <div class="chat-avatar">
+              <img src="../images/notification-avatar.svg">
+            </div>
+            <div class="message-item-text-block">
+              <div class="message-item-first-row">
+                <p class="message-item-sender-name">Мария Вишневская</p>
+                <p class="message-item-time">14:22</p>
+              </div>
+              <div class="message-item-company">Маринс-хоум Отель</div>
+              <div class="message-item__message-text">Я спросила. Вам кто-то из сотрудников должен был отправить все данные. Если будут вопросы — позвоните мне.</div>
+            </div>
+          </div>
+        <div class="day-tag">Вчера</div>
+        <div class="message-item">
+          <div class="chat-avatar">
+            <img src="../images/notification-avatar.svg">
+          </div>
+          <div class="message-item-text-block">
+            <div class="message-item-first-row">
+              <p class="message-item-sender-name">Мария Вишневская</p>
+              <p class="message-item-time">08:22</p>
+            </div>
+            <div class="message-item-company">Маринс-хоум Отель</div>
+            <div class="message-item__message-text">Я спросила. Вам кто-то из сотрудников должен был отправить все данные</div>
+          </div>
+        </div>
+        <div class="message-item">
+          <div class="chat-avatar">
+            <img src="../images/notification-avatar.svg">
+          </div>
+          <div class="message-item-text-block">
+            <div class="message-item-first-row">
+              <p class="message-item-sender-name">Антон</p>
+              <p class="message-item-time">12:25</p>
+            </div>
+            <div class="message-item__message-text">Хорошо, тогда завтра пришлю вам на почту</div>
+          </div>
+        </div>
+        <div class="day-tag">Сегодня</div>
+        <div class="message-item message-item-new">
+          <div class="chat-avatar">
+            <img src="../images/notification-avatar.svg">
+          </div>
+          <div class="message-item-text-block">
+            <div class="message-item-first-row">
+              <p class="message-item-sender-name">Мария Вишневская</p>
+              <p class="message-item-time">17:56</p>
+            </div>
+            <div class="message-item-company">Маринс-хоум Отель</div>
+            <div class="message-item__message-text">
+              Здравствуйте, вот план работ на этот семестр:
+              1) Добавление администратора:
+              - возможность видеть всех пользователей системы;
+              блокировка пользователей.
+              2) Реализация уведомлений; уведомления о сообщениях;
+            </div>
+          </div>
+        </div>
+        <div class="message-item message-item-new">
+          <div class="chat-avatar">
+            <img src="../images/notification-avatar.svg">
+          </div>
+          <div class="message-item-text-block">
+            <div class="message-item-first-row">
+              <p class="message-item-sender-name">Мария Вишневская</p>
+              <p class="message-item-time">17:57</p>
+            </div>
+            <div class="message-item-company">Маринс-хоум Отель</div>
+            <div class="message-item__message-text">Позвоните мне, как будет время</div>
+          </div>
+        </div>
+      </div>
+      <div class="message-input-block">
+        <form class="message-input" id="message-input">
+          <textarea id="message" rows="1" placeholder="Написать сообщение..."></textarea>
+          <button type="submit" class="message-send-btn" id="message-send-btn"></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<footer class="main-footer">
+  <div class="footer-nav">
+    <a href="#">О системе</a>
+    <a href="#">Исполнители</a>
+    <a href="#">Заказы</a>
+    <a href="#">*Скоро на платформе</a>
+    <a class="disabled" href="#">Конкурсы*</a>
+    <a class="disabled" href="#">Вакансии*</a>
+    <a class="disabled" href="#">Стажировки*</a>
+  </div>
+  <div class="footer-logo">
+    <a class="footer-logo-link">
+      <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="copyright" href="#">Политика конфиденциальности</a>
+    <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+  </div>
+</footer>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый старт</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+  <div class="logo">
+    <a href="#" class="logo-link header-logo">
+      <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="auth-link" href="#"><div class="nav-username">@alex_ovchinnik_off</div></a>
+  </div>
+
+  <input class="side-menu" type="checkbox" id="side-menu"/>
+  <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+  <nav class="nav">
+    <ul class="nav-menu">
+      <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+      <li><a href="#">О системе</a></li>
+      <li><a href="#">Исполнители</a></li>
+      <li><a href="#">Заказы</a></li>
+      <li><a class="disabled" href="#">Конкурсы*</a></li>
+      <li><a class="disabled" href="#">Вакансии*</a></li>
+      <li><a class="disabled" href="#">Стажировки*</a> </li>
+      <li><a href="#">*Скоро на платформе</a></li>
+      <li class="nav-for-mobile"><a href="#">Выход</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="main">
+  <div class="current-project">
+    <h1 class="page-title">Страница заказа</h1>
+    <p class="navigation-after-title"><a href="#">личный кабинет</a>/<a href="#">страница заказа</a></p>
+    <section class="project-desc-card">
+      <h2 class="visually-hidden">Описание заказа</h2>
+      <p class="project-card-name">Скрипт для автоматического создания новых профилей в MS Oulook – авто импорт данных из Excel</p>
+      <p class="project-card-description">Скрипт, который автоматически создает новые профили в MS outlook 2010, импортируя данные из файла Excel (логин и IMAP пароль). Либо Ваш вариант удобного сборщика писем с других ящиков по протоколу IMAP. Главная конечная задача – получение писем ящиков по протоколу IMAP на 1 сборщик писем. Загрузка данных почтовых ящиков (логины и пароли для IMAP) из файла Excel.. Скрипт, который автоматически создает новые профили в MS outlook 2010, импортируя данные из файла Excel (логин и IMAP пароль). Либо Ваш вариант удобного сборщика писем с других ящиков по протоколу IMAP.</p>
+      <div class="project-card-tags fields-row">
+        <h3>Сферы деятельности:</h3>
+        <div class="project-card-tags tags-fields">
+          <div class="field-card-tag">#дизайн</div>
+          <div class="field-card-tag">#фронтенд_разработка</div>
+          <div class="field-card-tag">#ux_ui</div>
+          <div class="field-card-tag">#лэндинги</div>
+          <div class="field-card-tag">#верстка-сайтов</div>
+        </div>
+      </div>
+
+      <div class="project-card-tags skills-row">
+        <h3>Компетенции:</h3>
+        <div class="project-card-tags tags-skills">
+          <div class="field-card-tag">#react</div>
+          <div class="field-card-tag">#redux</div>
+          <div class="field-card-tag">#git</div>
+          <div class="field-card-tag">#lightroom</div>
+          <div class="field-card-tag">#html</div>
+          <div class="field-card-tag">#phyton</div>
+          <div class="field-card-tag">#excel</div>
+          <div class="field-card-tag">#type_script</div>
+          <div class="field-card-tag">#css</div>
+          <div class="field-card-tag">#java_script</div>
+        </div>
+      </div>
+
+      <div class="project-card-tags control-btns">
+        <h3>Действие с заказом:</h3>
+        <div class="project-card-tags tags-skills">
+          <a class="control-project">Завершить</a>
+          <a class="control-project">Редактировать</a>
+          <a class="control-project">Удалить</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="consumer-data-card card">
+      <div class="consumer-data-card column-1">
+        <p class="consumer-data-card company-name">Кофейня Baker Street</p>
+
+        <address>
+          <p class="consumer-data-card company-address">Адрес: г. Нижний Новгород, ул. Светлогорская, д. 31/Б, стр 7 </p>
+          <p class="consumer-data-card company-inn">ИНН: 222-098-7656</p>
+        </address>
+
+        <div class="consumer-data-card person-row">
+          <div class="consumer-data-card little-avatar">
+            <img class="consumer-data-card avatar-image" src="../images/empty-user.svg" alt="Автар пользователя">
+          </div>
+          <p class="consumer-data-card person-name">Литвинова Ксения Евгеньевна</p>
+        </div>
+
+        <div class="consumer-data-card person-contatcts">
+          <p class="consumer-data-card person-phone">Телефон: <a href="tel:+79143439889">+7 (914) 343-98-89</a></p>
+          <p class="consumer-data-card person-email">E-mail:  <a href="mailto:flex-alex@mymail.com">flex-alex@mymail.com</a></p>
+        </div>
+      </div>
+      <div class="consumer-data-card column-2">
+        <h3>Параметры:</h3>
+        <div class="consumer-data-card project-params">
+          <div class="consumer-data-card one-param">
+            <img class="consumer-data-card param-icon" src="../images/checklist-icon.svg" alt="param icon">
+            <p class="consumer-data-card param-text">Статус: <span>В процессе</span></p>
+          </div>
+          <div class="consumer-data-card one-param">
+            <img class="consumer-data-card param-icon" src="../images/deadline-icon.svg" alt="param icon">
+            <p class="consumer-data-card param-text">Дедлайн: <span>14 ноября 2022</span></p>
+          </div>
+          <div class="consumer-data-card one-param">
+            <img class="consumer-data-card param-icon" src="../images/customer-icon.svg" alt="param icon">
+            <p class="consumer-data-card param-text">Участники: <span>4</span></p>
+          </div>
+        </div>
+        <h3>Ссылки:</h3>
+        <div class="consumer-data-card person-links">
+          <a href="#" class="link social-github" title="Переход во Вконтаке">
+            <img class="social-logo" src="../images/vk-icon.svg" alt="Логотип VK">
+          </a>
+          <a href="#" class="link social-github" title="Переход в Telegram">
+            <img class="social-logo" src="../images/telegram-icon.svg" alt="Логотип Telegram">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-contractors">
+      <div class="project-contractors subtitle-row">
+        <input class="project-contractors show-hide-list" type="button" id="contractors-btn">
+        <h2 class="page-subtitle">Исполнители заказа:</h2>
+      </div>
+      <div class="project-contractors contractor-cards visually-hidden">
+        <div class="project-contractors contractor-card card blue">
+          <div class="project-contractors contractor-card column-1">
+            <div class="project-contractors contractor-card contractor-data">
+              <div class="project-contractors contractor-card user-avatar">
+                <img class="project-contractors contractor-card avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+              </div>
+
+              <div class="project-contractors contractor-card contractor-data-rows">
+                <p class="project-contractors contractor-card contractor-name">Овчинников Александр Сергеевич</p>
+                <div class="project-contractors age-and-city">
+                  <p class="project-contractors age">Возраст: 23</p>
+                  <p class="project-contractors city">Город: Екатеринбург</p>
+                </div>
+                <p class="project-contractors email">E-mail: flex-alex@mymail.com</p>
+                <p class="project-contractors phone">Телефон: +7 (914) 343-98-89</p>
+              </div>
+            </div>
+
+            <div class="project-contractors contractor-card contractor-links">
+              <h3>Ссылки пользователя:</h3>
+              <div class="contractor-data-card person-links">
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/github-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">omelys</a>
+                </div>
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/vk-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">stepanomely</a>
+                </div>
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/telegram-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">stepanstepanomelyomelysomely</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-contractors contractor-card column-2">
+            <div class="project-contractors contractor-card params">
+              <h3>Параметры:</h3>
+              <div class="consumer-data-card project-params">
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/checklist-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Статус: <span>Завершен</span></p>
+                </div>
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/review-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Отзыв: <span>Не предоставлен</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-contractors contractor-card buttons">
+              <a class="project-card-btn" href="#">Перейти к профилю</a>
+              <a class="project-card-btn blue" href="#">Написать отзыв</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-contractors contractor-card card">
+          <div class="project-contractors contractor-card column-1">
+            <div class="project-contractors contractor-card contractor-data">
+              <div class="project-contractors contractor-card user-avatar">
+                <img class="project-contractors contractor-card avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+              </div>
+
+              <div class="project-contractors contractor-card contractor-data-rows">
+                <p class="project-contractors contractor-card contractor-name">Овчинников Александр Сергеевич</p>
+                <div class="project-contractors age-and-city">
+                  <p class="project-contractors age">Возраст: 23</p>
+                  <p class="project-contractors city">Город: Екатеринбург</p>
+                </div>
+                <p class="project-contractors email">E-mail: flex-alex@mymail.com</p>
+                <p class="project-contractors phone">Телефон: +7 (914) 343-98-89</p>
+              </div>
+            </div>
+
+            <div class="project-contractors contractor-card contractor-links">
+              <h3>Ссылки пользователя:</h3>
+              <div class="contractor-data-card person-links">
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/github-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">omelys</a>
+                </div>
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/vk-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">stepanomely</a>
+                </div>
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/telegram-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">stepanstepanomelyomelysomely</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-contractors contractor-card column-2">
+            <div class="project-contractors contractor-card params">
+              <h3>Параметры:</h3>
+              <div class="consumer-data-card project-params">
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/checklist-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Статус: <span>В процессе</span></p>
+                </div>
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/shake-hands-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Проектов завершено: <span>4</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-contractors contractor-card buttons">
+              <a class="project-card-btn" href="#">Перейти к профилю</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-contractors contractor-card card">
+          <div class="project-contractors contractor-card column-1">
+            <div class="project-contractors contractor-card contractor-data">
+              <div class="project-contractors contractor-card user-avatar">
+                <img class="project-contractors contractor-card avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+              </div>
+
+              <div class="project-contractors contractor-card contractor-data-rows">
+                <p class="project-contractors contractor-card contractor-name">Овчинников Александр Сергеевич</p>
+                <div class="project-contractors age-and-city">
+                  <p class="project-contractors age">Возраст: 23</p>
+                  <p class="project-contractors city">Город: Екатеринбург</p>
+                </div>
+                <p class="project-contractors email">E-mail: flex-alex@mymail.com</p>
+                <p class="project-contractors phone">Телефон: +7 (914) 343-98-89</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-contractors contractor-card column-2">
+            <div class="project-contractors contractor-card params">
+              <h3>Параметры:</h3>
+              <div class="consumer-data-card project-params">
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/checklist-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Статус: <span>В процессе</span></p>
+                </div>
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/shake-hands-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Проектов завершено: <span>4</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-contractors contractor-card buttons">
+              <a class="project-card-btn" href="#">Перейти к профилю</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-contractors contractor-card card">
+          <div class="project-contractors contractor-card column-1">
+            <div class="project-contractors contractor-card contractor-data">
+              <div class="project-contractors contractor-card user-avatar">
+                <img class="project-contractors contractor-card avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+              </div>
+
+              <div class="project-contractors contractor-card contractor-data-rows">
+                <p class="project-contractors contractor-card contractor-name">Овчинников Александр Сергеевич</p>
+                <div class="project-contractors age-and-city">
+                  <p class="project-contractors age">Возраст: 23</p>
+                  <p class="project-contractors city">Город: Екатеринбург</p>
+                </div>
+                <p class="project-contractors email">E-mail: flex-alex@mymail.com</p>
+                <p class="project-contractors phone">Телефон: +7 (914) 343-98-89</p>
+              </div>
+            </div>
+
+            <div class="project-contractors contractor-card contractor-links">
+              <h3>Ссылки пользователя:</h3>
+              <div class="contractor-data-card person-links">
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/github-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">omelys</a>
+                </div>
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/vk-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">stepanomely</a>
+                </div>
+                <div class="contractor-data-card one-link">
+                  <img class="contractor-data-card link-icon" src="../images/telegram-icon.svg" alt="link icon">
+                  <a class="contractor-data-card link-text" href="#">stepanstepanomelyomelysomely</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-contractors contractor-card column-2">
+            <div class="project-contractors contractor-card params">
+              <h3>Параметры:</h3>
+              <div class="consumer-data-card project-params">
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/checklist-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Статус: <span>Завершен</span></p>
+                </div>
+                <div class="consumer-data-card one-param">
+                  <img class="consumer-data-card param-icon" src="../images/review-icon.svg" alt="param icon">
+                  <p class="consumer-data-card param-text">Отзыв: <span>Отзыв предоставлен</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-contractors contractor-card buttons">
+              <a class="project-card-btn" href="#">Перейти к профилю</a>
+            </div>
+          </div>
+        </div>
+        <input class="more-cards-btn" type="button" value="Показать больше">
+      </div>
+    </section>
+
+    <section class="project-new-contractors">
+      <div class="project-new-contractors subtitle-row">
+        <input class="project-new-contractors show-hide-list" type="button" id="new-contractors-btn">
+        <h2 class="page-subtitle">Новые предложения:</h2>
+      </div>
+      <div class="project-new-contractors contractor-cards visually-hidden">
+        <div class="project-new-contractors contractor-card card">
+          <div class="new-contractor contractor-data">
+            <div class="new-contractor user-avatar">
+              <img class="new-contractor avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+            </div>
+            <div class="new-contractor contractor-info">
+              <p class="new-contractor contractor-username">@some-super-student</p>
+              <p class="new-contractor project-finished">Проектов закончено: <span>4</span></p>
+
+              <div class="new-contractors buttons">
+                <a class="project-card-btn" href="#">Перейти к профилю</a>
+                <a class="project-card-btn" href="#">Принять в проект</a>
+                <a class="project-card-btn" href="#">Отклонить</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="new-contractor contractor-fields">
+            <h3>Сферы деятельности:</h3>
+            <div class="new-contractor tags-fields">
+              <div class="field-card-tag">#дизайн</div>
+              <div class="field-card-tag">#фронтенд_разработка</div>
+              <div class="field-card-tag">#ux_ui</div>
+              <div class="field-card-tag">#лэндинги</div>
+              <div class="field-card-tag">#верстка-сайтов</div>
+            </div>
+          </div>
+
+          <div class="new-contractor contractor-skills">
+            <h3>Компетенции:</h3>
+            <div class="new-contractor tags-skills">
+              <div class="field-card-tag">#react</div>
+              <div class="field-card-tag">#redux</div>
+              <div class="field-card-tag">#git</div>
+              <div class="field-card-tag">#lightroom</div>
+              <div class="field-card-tag">#html</div>
+              <div class="field-card-tag">#phyton</div>
+              <div class="field-card-tag">#excel</div>
+              <div class="field-card-tag">#type_script</div>
+              <div class="field-card-tag">#css</div>
+              <div class="field-card-tag">#java_script</div>
+            </div>
+          </div>
+        </div>
+        <input class="more-cards-btn" type="button" value="Показать больше">
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+<footer class="main-footer">
+  <div class="footer-nav">
+    <a href="#">О системе</a>
+    <a href="#">Исполнители</a>
+    <a href="#">Заказы</a>
+    <a href="#">*Скоро на платформе</a>
+    <a class="disabled" href="#">Конкурсы*</a>
+    <a class="disabled" href="#">Вакансии*</a>
+    <a class="disabled" href="#">Стажировки*</a>
+  </div>
+  <div class="footer-logo">
+    <a class="footer-logo-link">
+      <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="copyright" href="#">Политика конфиденциальности</a>
+    <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+  </div>
+</footer>
+</html>

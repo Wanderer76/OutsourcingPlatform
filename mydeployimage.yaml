@@ -1,0 +1,205 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  outsourceplatformapp
+  namespace: utyata-project
+  labels:
+    app:  outsourceplatformapp
+    #env: Development
+    own: Utyata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: outsourceplatformapp
+  template:
+    metadata:
+      labels:
+        project: outsourceplatformapp
+        app: outsourceplatformapp
+        service: back
+    spec:
+      containers:
+        - name: outsourceplatform
+          image: artyomte1243/outsourceplatformapp:tagname
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: back
+  namespace: utyata-project
+spec:
+  selector:
+    app: back
+    project: outsourceplatformapp
+  type: ClusterIP
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: back-listener
+    protocol: TCP
+    port: 5288
+    targetPort: 80
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+    #nodePort: 5288
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-client
+  namespace: utyata-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-client
+  template:
+    metadata:
+      labels:
+        app: react-client
+    spec:
+      containers:
+      - name: react-client
+        image: artomte123/outsourceplatformapp-client
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client
+  namespace: utyata-project
+spec:
+  selector:
+    app: client
+    project: react-client
+  type: LoadBalancer
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: client
+    protocol: TCP
+    port: 80
+    targetPort: 80
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+    #nodePort: 3000
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: database
+  namespace: utyata-project
+spec:
+  selector:
+    matchLabels:
+      app: database # has to match .spec.template.metadata.labels
+  serviceName: "database"
+  replicas: 1 # by default is 1
+  minReadySeconds: 5 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: database # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: database
+        image: postgres:14.3-alpine
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: postgres
+          mountPath: /var/lib/postgresql/data
+          # subPath: data
+        env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: '1'
+        - name: POSTGRES_DB
+          value: Test
+        - name: PGDATA 
+          value: /var/lib/postgresql/data/pgdata
+      initContainers:
+      - name: database-init
+        image: busybox
+        command: ["sh","-c","mkdir -p /var/lib/postgresql/data/pgdata && chown -R 999:999 /var/lib/postgresql/data/pgdata"] 
+        securityContext:
+          runAsUser: 0
+          privileged: true
+        volumeMounts:
+        - name: postgres
+          mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "rook-ceph-block"
+      resources:
+        requests:
+          storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: utyata-project
+  labels:
+    app: postgres
+spec:
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
+  selector:
+    app: database
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: ingress-name
+#  namespace: utyata-project
+#spec:
+#  rules:
+#  - host: localhost #https://git.66bit.ru/urfu2022/fiit/practice-management
+#    http:
+#      paths:
+#      - path: /
+#        pathType: Prefix
+#        backend:
+#          service:
+#            name: client
+#            port:
+#              number: 3000
+#      - path:  /api
+#        pathType: Prefix
+#        backend:
+#          service:
+#            name: back
+#            port:
+#              number: 5288
+#       - path:  /swagger
+#        pathType: Prefix
+#        backend:
+#          service:
+#            name: back
+#            port:
+#              number: 5288
+##url - https://git.66bit.ru/urfu2022/fiit/practice-management
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
+# [x]endoint с api все
+# minicube
+# [x]host для фронта

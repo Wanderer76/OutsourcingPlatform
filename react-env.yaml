@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: reactenv
+data:
+    REACT_APP_API_URL: https://outsourcing.stk8s.66bit.ru

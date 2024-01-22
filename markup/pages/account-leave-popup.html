@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый старт</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+  <div class="logo">
+    <a href="#" class="logo-link header-logo">
+      <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="auth-link" href="#"><div class="nav-username">@alex_ovchinnik_off</div></a>
+  </div>
+
+  <input class="side-menu" type="checkbox" id="side-menu"/>
+  <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+  <nav class="nav">
+    <ul class="nav-menu">
+      <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+      <li><a href="#">О системе</a></li>
+      <li><a href="#">Исполнители</a></li>
+      <li><a href="#">Заказы</a></li>
+      <li><a class="disabled" href="#">Конкурсы*</a></li>
+      <li><a class="disabled" href="#">Вакансии*</a></li>
+      <li><a class="disabled" href="#">Стажировки*</a> </li>
+      <li><a href="#">*Скоро на платформе</a></li>
+      <li class="nav-for-mobile"><a href="#">Выход</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="popup-wrapper">
+  <div class="popup leave-account-popup">
+    <img class="finish-project-popup-logo" src="../images/logo-black.svg">
+    <p class="leave-text">Желаете выйти из личного кабинета?</p>
+    <div class="popup-buttons buttons">
+      <a class="project-card-btn" href="#">Выйти</a>
+      <a class="project-card-btn" href="#">Отмена</a>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="current-project">
+    <h1 class="page-title">Страница заказа</h1>
+    <p class="navigation-after-title"><a href="#">личный кабинет</a>/<a href="#">страница заказа</a></p>
+    <section class="project-desc-card">
+      <h2 class="visually-hidden">Описание заказа</h2>
+      <p class="project-card-name">Скрипт для автоматического создания новых профилей в MS Oulook – авто импорт данных из Excel</p>
+      <p class="project-card-description">Скрипт, который автоматически создает новые профили в MS outlook 2010, импортируя данные из файла Excel (логин и IMAP пароль). Либо Ваш вариант удобного сборщика писем с других ящиков по протоколу IMAP. Главная конечная задача – получение писем ящиков по протоколу IMAP на 1 сборщик писем. Загрузка данных почтовых ящиков (логины и пароли для IMAP) из файла Excel.. Скрипт, который автоматически создает новые профили в MS outlook 2010, импортируя данные из файла Excel (логин и IMAP пароль). Либо Ваш вариант удобного сборщика писем с других ящиков по протоколу IMAP.</p>
+      <div class="project-card-tags fields-row">
+        <h3>Сферы деятельности:</h3>
+        <div class="project-card-tags tags-fields">
+          <div class="field-card-tag">#дизайн</div>
+          <div class="field-card-tag">#фронтенд_разработка</div>
+          <div class="field-card-tag">#ux_ui</div>
+          <div class="field-card-tag">#лэндинги</div>
+          <div class="field-card-tag">#верстка-сайтов</div>
+        </div>
+      </div>
+
+      <div class="project-card-tags skills-row">
+        <h3>Компетенции:</h3>
+        <div class="project-card-tags tags-skills">
+          <div class="field-card-tag">#react</div>
+          <div class="field-card-tag">#redux</div>
+          <div class="field-card-tag">#git</div>
+          <div class="field-card-tag">#lightroom</div>
+          <div class="field-card-tag">#html</div>
+          <div class="field-card-tag">#phyton</div>
+          <div class="field-card-tag">#excel</div>
+          <div class="field-card-tag">#type_script</div>
+          <div class="field-card-tag">#css</div>
+          <div class="field-card-tag">#java_script</div>
+        </div>
+      </div>
+
+      <a class="finish-project project-card-btn" href="#">Завершить проект</a>
+    </section>
+
+    <h2 class="page-subtitle">Данные от заказчика:</h2>
+    <section class="consumer-data-card card">
+      <div class="consumer-data-card column-1">
+        <p class="consumer-data-card company-name">Кофейня Baker Street</p>
+
+        <address>
+          <p class="consumer-data-card company-address">Адрес: г. Нижний Новгород, ул. Светлогорская, д. 31/Б, стр 7 </p>
+          <p class="consumer-data-card company-inn">ИНН: 222-098-7656</p>
+        </address>
+
+        <div class="consumer-data-card person-row">
+          <div class="consumer-data-card little-avatar">
+            <img class="consumer-data-card avatar-image" src="../images/empty-user.svg" alt="Автар пользователя">
+          </div>
+          <p class="consumer-data-card person-name">Литвинова Ксения Евгеньевна</p>
+        </div>
+
+        <div class="consumer-data-card person-contatcts">
+          <p class="consumer-data-card person-phone">Телефон: <a href="tel:+79143439889">+7 (914) 343-98-89</a></p>
+          <p class="consumer-data-card person-email">E-mail:  <a href="mailto:flex-alex@mymail.com">flex-alex@mymail.com</a></p>
+        </div>
+      </div>
+      <div class="consumer-data-card column-2">
+        <h3>Параметры:</h3>
+        <div class="consumer-data-card project-params">
+          <div class="consumer-data-card one-param">
+            <img class="consumer-data-card param-icon" src="../images/checklist-icon.svg" alt="param icon">
+            <p class="consumer-data-card param-text">Статус: <span>В процессе</span></p>
+          </div>
+          <div class="consumer-data-card one-param">
+            <img class="consumer-data-card param-icon" src="../images/deadline-icon.svg" alt="param icon">
+            <p class="consumer-data-card param-text">Дедлайн: <span>14 ноября 2022</span></p>
+          </div>
+        </div>
+        <h3>Ссылки:</h3>
+        <div class="consumer-data-card person-links">
+          <div class="consumer-data-card one-link">
+            <img class="consumer-data-card link-icon" src="../images/vk-icon.svg" alt="VK icon">
+            <a class="consumer-data-card link-text" href="#">omelys</a>
+          </div>
+          <div class="consumer-data-card one-link">
+            <img class="consumer-data-card link-icon" src="../images/telegram-icon.svg" alt="link icon">
+            <a class="consumer-data-card link-text" href="#">stepanstepanomelyomelysomely</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+<footer class="main-footer">
+  <div class="footer-nav">
+    <a href="#">О системе</a>
+    <a href="#">Исполнители</a>
+    <a href="#">Заказы</a>
+    <a href="#">*Скоро на платформе</a>
+    <a class="disabled" href="#">Конкурсы*</a>
+    <a class="disabled" href="#">Вакансии*</a>
+    <a class="disabled" href="#">Стажировки*</a>
+  </div>
+  <div class="footer-logo">
+    <a class="footer-logo-link">
+      <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="copyright" href="#">Политика конфиденциальности</a>
+    <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+  </div>
+</footer>
+</html>

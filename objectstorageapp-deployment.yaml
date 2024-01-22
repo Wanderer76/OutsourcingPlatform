@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  objectstorageapp
+  namespace: utyata-project
+  labels:
+    app:  objectstorageapp
+    own: Utyata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: objectstorageapp
+  template:
+    metadata:
+      labels:
+        project: objectstorageapp
+        app: objectstorageapp
+        service: objectstorage-service
+    spec:
+      containers:
+        - name: objectstorageapp
+          image: hub.66bit.ru/urfu2022/rtf/outsourcing-platform/objectstorageapp
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+      imagePullSecrets:
+          - name: outsorce-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: objectstorage-service
+  namespace: utyata-project
+spec:
+  selector:
+    project: objectstorageapp
+  type: ClusterIP
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: files-listener
+    protocol: TCP
+    port: 5114
+    targetPort: 80
+   # nodePort: 30007

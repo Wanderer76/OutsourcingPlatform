@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый старт</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+    <div class="logo">
+        <a href="#" class="logo-link header-logo">
+            <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+        </a>
+        <a class="auth-link" href="#"><div class="nav-username">@alex_ovchinnik_off</div></a>
+    </div>
+
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+    <nav class="nav">
+        <ul class="nav-menu">
+            <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+            <li><a href="#">О системе</a></li>
+            <li><a href="#">Исполнители</a></li>
+            <li><a href="#">Заказы</a></li>
+            <li><a class="disabled" href="#">Конкурсы*</a></li>
+            <li><a class="disabled" href="#">Вакансии*</a></li>
+            <li><a class="disabled" href="#">Стажировки*</a> </li>
+            <li><a href="#">*Скоро на платформе</a></li>
+            <li class="nav-for-mobile"><a href="#">Выход</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <section class="search-filter">
+        <h1 class="page-title">Поиск исполнителей</h1>
+        <p class="navigation-after-title"><a href="#">главная страница</a>/<a href="#">поиск исполнителей</a></p>
+        <form class="new-project" name="search-filter">
+            <div class="inputs-row">
+                <div class="new-project__field project-new-field">
+                    <p>Сфера деятельности</p>
+                    <select class="new-project-select" name="project-new-field" id="project-new-field">
+                        <option value="">-- Выберите сферу --</option>
+                        <option value="programming">#программирование</option>
+                        <option value="game-dev">#разработка_игр</option>
+                        <option value="mobile-dev">#мобильные_приложения</option>
+                    </select>
+                    <label class="visually-hidden" for="project-new-field">Сфера деятельности</label>
+                </div>
+                <div class="new-project__skill project-new-skill">
+                    <p>Компетенции</p>
+                    <select class="new-project-select" name="project-new-skill" id="project-new-skill">
+                        <option value="">-- Выберите компетенцию --</option>
+                        <option value="programming">#javascript</option>
+                        <option value="game-dev">#мобильная_разработка</option>
+                        <option value="mobile-dev">#математическое_моделирование</option>
+                        <option value="mobile-dev">#tenserflow</option>
+                        <option value="mobile-dev">#flash-анимация</option>
+                        <option value="mobile-dev">#ux_ui</option>
+                    </select>
+                    <label class="visually-hidden" for="project-new-skill">Дедлайн проекта</label>
+                </div>
+            </div>
+
+            <div class="new-project-fields">
+                <h2>Выбранные сферы деятельности</h2>
+                <div class="new-project-field-tags">
+                    <div class="new-project-field-tag">
+                        <span>#программирование</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+
+                    <div class="new-project-field-tag">
+                        <span>#разработка_игр</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+
+                    <div class="new-project-field-tag">
+                        <span>#мобильные_приложения</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+                </div>
+                <p class="new-project__text visually-hidden" id="project-new-field-error">Error text (Текст ошибки)!</p>
+            </div>
+
+            <div class="new-project-skills">
+                <h2>Выбранные компетенции</h2>
+                <div class="new-project-skills-tags">
+                    <div class="new-project-skill-tag">
+                        <span>#javascript</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+
+                    <div class="new-project-skill-tag">
+                        <span>#мобильная_разработка</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+
+                    <div class="new-project-skill-tag">
+                        <span>#математическое_моделирование</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+
+                    <div class="new-project-skill-tag">
+                        <span>#tenserflow</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+
+                    <div class="new-project-skill-tag">
+                        <span>#flash-анимация</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+
+                    <div class="new-project-skill-tag">
+                        <span>#ux_ui</span>
+                        <button class="delete-tag-btn">x</button>
+                    </div>
+                </div>
+                <p class="new-project__text visually-hidden" id="project-new-skill-error">Error text (Текст ошибки)!</p>
+            </div>
+
+            <input type="submit" class="filter-search-btn" value="Поиск" id="filter-search-btn">
+        </form>
+    </section>
+
+    <section class="projects">
+        <h2 class="center">Результаты поиска:</h2>
+        <div class="project-cards">
+            <div class="project-new-contractors contractor-card card card-search">
+                <div class="new-contractor contractor-data">
+                    <div class="new-contractor user-avatar-little">
+                        <img class="new-contractor avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+                    </div>
+                    <div class="new-contractor contractor-info">
+                        <p class="new-contractor contractor-username">@some-super-student</p>
+                        <div class="contractor-additional-info">
+                            <p class="new-contractor project-finished">Проектов закончено:<span>4</span></p>
+                            <p class="new-contractor city">Город: <span>Екатеринбург</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-contractor contractor-fields">
+                    <h3>Сферы деятельности:</h3>
+                    <div class="new-contractor tags-fields">
+                        <div class="field-card-tag">#дизайн</div>
+                        <div class="field-card-tag">#фронтенд_разработка</div>
+                        <div class="field-card-tag">#ux_ui</div>
+                        <div class="field-card-tag">#лэндинги</div>
+                        <div class="field-card-tag">#верстка-сайтов</div>
+                    </div>
+                </div>
+
+                <div class="new-contractor contractor-skills">
+                    <h3>Компетенции:</h3>
+                    <div class="new-contractor tags-skills">
+                        <div class="field-card-tag">#react</div>
+                        <div class="field-card-tag">#redux</div>
+                        <div class="field-card-tag">#git</div>
+                        <div class="field-card-tag">#lightroom</div>
+                        <div class="field-card-tag">#html</div>
+                        <div class="field-card-tag">#phyton</div>
+                        <div class="field-card-tag">#excel</div>
+                        <div class="field-card-tag">#type_script</div>
+                        <div class="field-card-tag">#css</div>
+                        <div class="field-card-tag">#java_script</div>
+                    </div>
+                </div>
+                <div class="searched-contractor-card buttons">
+                    <a class="project-card-btn" href="#">Перейти к профилю</a>
+                </div>
+
+            </div>
+            <div class="project-new-contractors contractor-card card card-search">
+                <div class="new-contractor contractor-data">
+                    <div class="new-contractor user-avatar-little">
+                        <img class="new-contractor avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+                    </div>
+                    <div class="new-contractor contractor-info">
+                        <p class="new-contractor contractor-username">@some-super-student</p>
+                        <div class="contractor-additional-info">
+                            <p class="new-contractor project-finished">Проектов закончено:<span>4</span></p>
+                            <p class="new-contractor city">Город: <span>Екатеринбург</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-contractor contractor-fields">
+                    <h3>Сферы деятельности:</h3>
+                    <div class="new-contractor tags-fields">
+                        <div class="field-card-tag">#дизайн</div>
+                        <div class="field-card-tag">#фронтенд_разработка</div>
+                        <div class="field-card-tag">#ux_ui</div>
+                        <div class="field-card-tag">#лэндинги</div>
+                        <div class="field-card-tag">#верстка-сайтов</div>
+                    </div>
+                </div>
+
+                <div class="new-contractor contractor-skills">
+                    <h3>Компетенции:</h3>
+                    <div class="new-contractor tags-skills">
+                        <div class="field-card-tag">#react</div>
+                        <div class="field-card-tag">#redux</div>
+                        <div class="field-card-tag">#git</div>
+                        <div class="field-card-tag">#lightroom</div>
+                        <div class="field-card-tag">#html</div>
+                        <div class="field-card-tag">#phyton</div>
+                        <div class="field-card-tag">#excel</div>
+                        <div class="field-card-tag">#type_script</div>
+                        <div class="field-card-tag">#css</div>
+                        <div class="field-card-tag">#java_script</div>
+                    </div>
+                </div>
+                <div class="searched-contractor-card buttons">
+                    <a class="project-card-btn" href="#">Перейти к профилю</a>
+                </div>
+
+            </div>
+            <div class="project-new-contractors contractor-card card card-search">
+                <div class="new-contractor contractor-data">
+                    <div class="new-contractor user-avatar-little">
+                        <img class="new-contractor avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+                    </div>
+                    <div class="new-contractor contractor-info">
+                        <p class="new-contractor contractor-username">@some-super-student</p>
+                        <div class="contractor-additional-info">
+                            <p class="new-contractor project-finished">Проектов закончено:<span>4</span></p>
+                            <p class="new-contractor city">Город: <span>Екатеринбург</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-contractor contractor-skills">
+                    <h3>Компетенции:</h3>
+                    <div class="new-contractor tags-skills">
+                        <div class="field-card-tag">#react</div>
+                        <div class="field-card-tag">#redux</div>
+                        <div class="field-card-tag">#git</div>
+                        <div class="field-card-tag">#lightroom</div>
+                        <div class="field-card-tag">#html</div>
+                        <div class="field-card-tag">#phyton</div>
+                        <div class="field-card-tag">#excel</div>
+                        <div class="field-card-tag">#type_script</div>
+                        <div class="field-card-tag">#css</div>
+                        <div class="field-card-tag">#java_script</div>
+                    </div>
+                </div>
+                <div class="searched-contractor-card buttons">
+                    <a class="project-card-btn" href="#">Перейти к профилю</a>
+                </div>
+
+            </div>
+            <div class="project-new-contractors contractor-card card card-search">
+                <div class="new-contractor contractor-data">
+                    <div class="new-contractor user-avatar-little">
+                        <img class="new-contractor avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+                    </div>
+                    <div class="new-contractor contractor-info">
+                        <p class="new-contractor contractor-username">@some-super-student</p>
+                        <div class="contractor-additional-info">
+                            <p class="new-contractor project-finished">Проектов закончено:<span>4</span></p>
+                            <p class="new-contractor city">Город: <span>Екатеринбург</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-contractor contractor-fields">
+                    <h3>Сферы деятельности:</h3>
+                    <div class="new-contractor tags-fields">
+                        <div class="field-card-tag">#дизайн</div>
+                        <div class="field-card-tag">#фронтенд_разработка</div>
+                        <div class="field-card-tag">#ux_ui</div>
+                        <div class="field-card-tag">#лэндинги</div>
+                        <div class="field-card-tag">#верстка-сайтов</div>
+                    </div>
+                </div>
+                <div class="searched-contractor-card buttons">
+                    <a class="project-card-btn" href="#">Перейти к профилю</a>
+                </div>
+
+            </div>
+            <div class="project-new-contractors contractor-card card card-search">
+                <div class="new-contractor contractor-data">
+                    <div class="new-contractor user-avatar-little">
+                        <img class="new-contractor avatar-image" src="../images/empty-user.svg" alt="Аватар пользователя">
+                    </div>
+                    <div class="new-contractor contractor-info">
+                        <p class="new-contractor contractor-username">@some-super-student</p>
+                        <div class="contractor-additional-info">
+                            <p class="new-contractor project-finished">Проектов закончено:<span>4</span></p>
+                            <p class="new-contractor city">Город: <span>Екатеринбург</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="searched-contractor-card buttons">
+                    <a class="project-card-btn" href="#">Перейти к профилю</a>
+                </div>
+
+            </div>
+
+            <ul class="list-pagination">
+                <li class="pagination-item edge">Назад</li>
+                <li class="pagination-item checked">1</li>
+                <li class="pagination-item">2</li>
+                <li class="pagination-item">3</li>
+                <li class="pagination-item">...</li>
+                <li class="pagination-item">10</li>
+                <li class="pagination-item edge">Далее</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+</body>
+<footer class="main-footer">
+    <div class="footer-nav">
+        <a href="#">О системе</a>
+        <a href="#">Исполнители</a>
+        <a href="#">Заказы</a>
+        <a href="#">*Скоро на платформе</a>
+        <a class="disabled" href="#">Конкурсы*</a>
+        <a class="disabled" href="#">Вакансии*</a>
+        <a class="disabled" href="#">Стажировки*</a>
+    </div>
+    <div class="footer-logo">
+        <a class="footer-logo-link">
+            <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+        </a>
+        <a class="copyright" href="#">Политика конфиденциальности</a>
+        <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+    </div>
+</footer>
+</html>

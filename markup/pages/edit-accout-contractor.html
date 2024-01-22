@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый старт</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+  <div class="logo">
+    <a href="#" class="logo-link header-logo">
+      <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="auth-link" href="#"><div class="nav-username">@alex_ovchinnik_off</div></a>
+  </div>
+
+  <input class="side-menu" type="checkbox" id="side-menu"/>
+  <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+  <nav class="nav">
+    <ul class="nav-menu">
+      <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+      <li><a href="#">О системе</a></li>
+      <li><a href="#">Исполнители</a></li>
+      <li><a href="#">Заказы</a></li>
+      <li><a class="disabled" href="#">Конкурсы*</a></li>
+      <li><a class="disabled" href="#">Вакансии*</a></li>
+      <li><a class="disabled" href="#">Стажировки*</a> </li>
+      <li><a href="#">*Скоро на платформе</a></li>
+      <li class="nav-for-mobile"><a href="#">Выход</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="main">
+  <section class="new-project">
+    <h1 class="page-title">Редактирование пользователя</h1>
+    <p class="navigation-after-title"><a href="#">личный кабинет</a>/<a href="#">форма редактирования</a></p>
+    <form class="new-project" name="new-project">
+
+      <div class="user-personal-data block">
+        <div class="user-personal-data column-1">
+          <div class="user-data-edit__field">
+            <p>Фамилия</p>
+            <input class="user-data-edit_input" type="text" placeholder="Фамилия" name="surname" id="surname" />
+            <label class="user-data__label visually-hidden" for="surname">Фамилия</label>
+            <p class="input-error__text visually-hidden" id="surname-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="user-data-edit__field">
+            <p>Имя</p>
+            <input class="user-data-edit_input" type="text" placeholder="Имя" name="name" id="name" />
+            <label class="user-data__label visually-hidden" for="name">Имя</label>
+            <p class="input-error__text visually-hidden" id="name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="user-data-edit__field">
+            <p>Отчество</p>
+            <input class="user-data-edit_input" type="text" placeholder="Отчество" name="second-name" id="second-name" />
+            <label class="user-data__label visually-hidden" for="second-name">Отчество</label>
+            <p class="input-error__text visually-hidden" id="second-name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="user-data-edit__field field-check-box">
+            <input class="user-data-edit__field user-data__check-box" type="checkbox" name="no-second-name" id="no-second-name" />
+            <label class="user-data__label" for="no-second-name">Нет отчества</label>
+          </div>
+        </div>
+        <div class="user-personal-data column-2">
+          <div class="user-data-edit__field">
+            <p>Название организации</p>
+            <input class="user-data-edit_input" type="text" placeholder="Название организации" name="company-name" id="company-name" />
+            <label class="user-data__label visually-hidden" for="company-name">Название организации</label>
+            <p class="input-error__text visually-hidden" id="company-name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="user-data-edit__field">
+            <p>Адрес</p>
+            <input class="user-data-edit_input" type="text" placeholder="Адрес" name="address" id="address" />
+            <label class="user-data__label visually-hidden" for="address">Адрес</label>
+            <p class="input-error__text visually-hidden" id="address-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="user-data-edit__field">
+            <p>ИНН</p>
+            <input class="user-data-edit_input" type="text" placeholder="XXX-XXX-XXXX" name="inn" id="inn" />
+            <label class="user-data__label visually-hidden" for="inn">Индивидуальный налоговый номер</label>
+            <p class="input-error__text visually-hidden" id="inn-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="user-data-edit__field field-check-box">
+            <input class="user-data-edit__field user-data__check-box" type="checkbox" name="own-business-check" id="own-business-check" />
+            <label class="user-data__label" for="own-business-check">У меня ИП</label>
+          </div>
+
+        </div>
+        <div class="user-personal-data column-3">
+          <div class="user-data-edit__field">
+            <p>Телефон</p>
+            <input class="user-data-edit_input" type="tel" placeholder="+7-XXX-XXX-XX-XX" name="phone" id="phone" />
+            <label class="user-data__label visually-hidden" for="phone">Телефон</label>
+            <p class="input-error__text visually-hidden" id="phone-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="user-data-edit__field error">
+            <p>Email</p>
+            <input class="user-data-edit_input" type="email" placeholder="your@email.com" name="email" id="email" value="wrong2email.com"/>
+            <label class="user-data__label visually-hidden" for="email">Email</label>
+            <p class="input-error__text" id="email-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="password-block">
+            <div class="user-data-edit__field password">
+              <p class="error">Пароль</p>
+              <div class="password-with-control">
+                <input class="user-data-edit_input error" type="password" placeholder="password" name="user-password" id="user-password" />
+                <a href="#" class="password-control"></a>
+              </div>
+              <label class="user-data__label visually-hidden" for="user-password">Пароль</label>
+            </div>
+
+            <div class="user-data-edit__field password-repeat">
+              <p class="error">Повторите пароль</p>
+              <div class="password-with-control">
+                <input class="user-data-edit_input error" type="password" placeholder="password" name="user-password-repeat" id="user-password-repeat" />
+                <a href="#" class="password-control"></a>
+              </div>
+              <label class="user-data__label visually-hidden" for="user-password-repeat">Повторите пароль</label>
+              <p class="input-error__text visually-hidden" id="password-error">Error text (Текст ошибки)!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inputs-row">
+        <div class="new-project__field project-new-link">
+          <div class="add-new-link">
+            <div class="new-project__field project-link-type">
+              <p>Добавить ссылку</p>
+              <select class="new-project-select" name="link-new-field" id="link-new-field">
+                <option value="">-- Ресурс --</option>
+                <option value="vk">Вконтакте</option>
+                <option value="telegram">Telegram</option>
+                <option value="github">GitHub</option>
+                <option value="behance">Behance</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="dribble">Dribble</option>
+              </select>
+              <label class="visually-hidden" for="link-new-field">Ссылка пользователя</label>
+              <p class="new-project__text visually-hidden" id="link-type-error">Error text (Текст ошибки)!</p>
+            </div>
+
+            <div class="new-project__field project-current-link">
+              <p>Адрес ссылки</p>
+              <input class="new-project__field" name="current-link" id="current-link" autocomplete="off">
+              <label class="visually-hidden" for="current-link">Введите ссылку</label>
+              <p class="new-project__text visually-hidden" id="current-link-error">Error text (Текст ошибки)!</p>
+            </div>
+          </div>
+
+        </div>
+
+        <input type="button" class="new-project-btn" value="Добавить" id="add-new-link">
+      </div>
+
+      <div class="new-project-links">
+        <h2>Мои ссылки</h2>
+        <div class="new-project-links-tags">
+          <div class="new-project-field-tag">
+            <span> vk.com/omelys</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-field-tag">
+            <span>github.com/stepanomelia1111111111111111111111111111111nenko</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-field-tag">
+            <span>t.me/omss223user</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+        </div>
+        <p class="new-project__text visually-hidden" id="project-new-links-error">Error text (Текст ошибки)!</p>
+      </div>
+
+      <div class="new-project__field person-description">
+        <p>О себе</p>
+        <textarea class="new-project__field person-description" placeholder="Напишите о себе" name="person-description" id="person-description" rows="8" autocomplete="off"></textarea>
+        <label class="visually-hidden" for="person-description">О себе</label>
+        <p class="new-project__text visually-hidden" id="person-description-error">Error text (Текст ошибки)!</p>
+      </div>
+
+      <div class="inputs-row">
+        <div class="new-project__field project-new-field">
+          <p>Сфера деятельности</p>
+          <select class="new-project-select" name="project-new-field" id="project-new-field">
+            <option value="">-- Выберите сферу --</option>
+            <option value="programming">#программирование</option>
+            <option value="game-dev">#разработка_игр</option>
+            <option value="mobile-dev">#мобильные_приложения</option>
+          </select>
+          <label class="visually-hidden" for="project-new-field">Сфера деятельности</label>
+        </div>
+      </div>
+
+      <div class="new-project-fields">
+        <h2>Выбранные сферы деятельности</h2>
+        <div class="new-project-field-tags">
+          <div class="new-project-field-tag">
+            <span>#программирование</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-field-tag">
+            <span>#разработка_игр</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-field-tag">
+            <span>#мобильные_приложения</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+        </div>
+        <p class="new-project__text visually-hidden" id="project-new-field-error">Error text (Текст ошибки)!</p>
+      </div>
+
+      <div class="inputs-row">
+        <div class="new-project__skill project-new-skill">
+          <p>Компетенции</p>
+          <select class="new-project-select" name="project-new-skill" id="project-new-skill">
+            <option value="">-- Выберите компетенцию --</option>
+            <option value="programming">#javascript</option>
+            <option value="game-dev">#мобильная_разработка</option>
+            <option value="mobile-dev">#математическое_моделирование</option>
+            <option value="mobile-dev">#tenserflow</option>
+            <option value="mobile-dev">#flash-анимация</option>
+            <option value="mobile-dev">#ux_ui</option>
+          </select>
+          <label class="visually-hidden" for="project-new-skill">Компетенци</label>
+        </div>
+      </div>
+
+      <div class="new-project-skills">
+        <h2>Выбранные компетенции</h2>
+        <div class="new-project-skills-tags">
+          <div class="new-project-skill-tag">
+            <span>#javascript</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-skill-tag">
+            <span>#мобильная_разработка</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-skill-tag">
+            <span>#математическое_моделирование</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-skill-tag">
+            <span>#tenserflow</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-skill-tag">
+            <span>#flash-анимация</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+
+          <div class="new-project-skill-tag">
+            <span>#ux_ui</span>
+            <button class="delete-tag-btn">x</button>
+          </div>
+        </div>
+        <p class="new-project__text visually-hidden" id="project-new-skill-error">Error text (Текст ошибки)!</p>
+      </div>
+
+      <div class="user-education-info block">
+        <div class="user-education-info column-1">
+          <h2>Образование</h2>
+          <div class="new-education__field education-place error">
+            <p>Место обучения</p>
+            <input class="new-education__field" name="education-place" id="education-place" autocomplete="off">
+            <label class="visually-hidden" for="education-place">Место обучения</label>
+            <p class="new-education__text" id="education-place-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="new-education__field education-speciality">
+            <p>Специальность</p>
+            <input class="new-education__field" name="education-speciality" id="education-speciality" autocomplete="off">
+            <label class="visually-hidden" for="education-speciality">Специальность</label>
+            <p class="new-education__text visually-hidden" id="education-speciality-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="new-education__field education-year">
+            <p>Год окончания</p>
+            <input class="new-education__field" type="number" min="1900" max="2099" step="1" value="2023" name="education-year" id="education-year" autocomplete="off">
+            <label class="visually-hidden" for="education-year">Год окончания</label>
+            <p class="new-education__text visually-hidden" id="education-year-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <input type="button" class="new-project-btn" value="Добавить" id="add-new-education">
+        </div>
+
+        <div class="user-education-info column-2">
+          <h2>Мое образование</h2>
+          <div class="user-education-info tab">
+            <div class="user-education-info education-row-card">
+              <div class="education-row-card-params">
+                <p class="education-row-card place">УрФУ</p>
+                <p class="education-row-card  specialty">Программная инженерия</p>
+                <p class="education-row-card year">В процессе</p>
+              </div>
+              <button class="delete-edu-btn">x</button>
+            </div>
+
+            <div class="user-education-info education-row-card">
+              <div class="education-row-card-params">
+                <p class="education-row-card place">Html-Academy</p>
+                <p class="education-row-card  specialty">Разработка сложных клиентских приложений</p>
+                <p class="education-row-card year">2022</p>
+              </div>
+              <button class="delete-edu-btn">x</button>
+            </div>
+
+            <div class="user-education-info education-row-card">
+              <div class="education-row-card-params">
+                <p class="education-row-card place">Skill-Factory</p>
+                <p class="education-row-card  specialty">Создание Vue-компонентов</p>
+                <p class="education-row-card year">2021</p>
+              </div>
+              <button class="delete-edu-btn">x</button>
+            </div>
+
+            <div class="user-education-info education-row-card">
+              <div class="education-row-card-params">
+                <p class="education-row-card place">Skill-Factory</p>
+                <p class="education-row-card  specialty">Разработка сложных клиентских приложений</p>
+                <p class="education-row-card year">2018</p>
+              </div>
+              <button class="delete-edu-btn">x</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-project__btns">
+        <input type="submit" class="new-project-btn new-project-submit-btn" value="Сохранить" id="edit-user-submit">
+        <input type="button" class="new-project-btn new-project-submit-cancel" value="Отменить" id="edit-user-cancel">
+      </div>
+
+
+    </form>
+  </section>
+</div>
+</body>
+<footer class="main-footer">
+  <div class="footer-nav">
+    <a href="#">О системе</a>
+    <a href="#">Исполнители</a>
+    <a href="#">Заказы</a>
+    <a href="#">*Скоро на платформе</a>
+    <a class="disabled" href="#">Конкурсы*</a>
+    <a class="disabled" href="#">Вакансии*</a>
+    <a class="disabled" href="#">Стажировки*</a>
+  </div>
+  <div class="footer-logo">
+    <a class="footer-logo-link">
+      <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="copyright" href="#">Политика конфиденциальности</a>
+    <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+  </div>
+</footer>
+</html>

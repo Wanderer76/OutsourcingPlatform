@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifications
+  namespace: utyata-project
+  labels:
+    app: notifications
+    own: Utyata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notifications
+  template:
+    metadata:
+      labels:
+        project: notifications
+        app: notifications
+        service: notificationapp
+    spec:
+      containers:
+        - name: outsourceplatform
+          image: hub.66bit.ru/urfu2022/rtf/outsourcing-platform/notificationapp #artyomte1243/outsourceplatformapp
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+            - name: DockerConnection
+              value: Host=database;Port=5432;Database=Test;Username=postgres;Password=1
+      imagePullSecrets:
+          - name: outsorce-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notificationapp
+  namespace: utyata-project
+spec:
+  selector:
+    project: notifications
+  type: ClusterIP
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: notifications-listener
+    protocol: TCP
+    port: 8085
+    targetPort: 80
+   # nodePort: 30007

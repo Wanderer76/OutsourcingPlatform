@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый старт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+    <div class="logo">
+        <a href="#" class="logo-link header-logo">
+            <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+        </a>
+
+        <div class="dropdown">
+            <a class="auth-link dropbtn" href="#"><div class="nav-username">@ADMIN12</div></a>
+            <div class="dropdown-content">
+                <a href="#">Личный кабинет</a>
+                <a href="#">Выход</a>
+            </div>
+        </div>
+    </div>
+
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+    <nav class="nav">
+        <ul class="nav-menu">
+            <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+            <li><a href="#">Панель администратора</a></li>
+            <li><a href="#">Список пользователей</a></li>
+            <li><a href="#">Редактор тегов</a></li>
+            <li class="nav-for-mobile"><a href="#">Выход</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="admin-panel">
+    <h1 class="tags-page">Редактор тегов</h1>
+    <div class="tags-editors">
+        <div class="fields-editor">
+            <h2>Сферы деятельности</h2>
+            <h3>Добавление нового тега:</h3>
+            <div class="add-tag-row">
+                <input class="add-tag-input" type="text" placeholder="Название тега (в форме текста)" id="add-tag-field-input">
+                <label class="visually-hidden" for="add-tag-field-input">Сфера деятельности</label>
+                <input type="button" class="add-tag-button" value="Добавить">
+            </div>
+            <h3>Список всех тегов:</h3>
+            <ul class="all-tags-list">
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+            </ul>
+        </div>
+        <div class="skills-editor">
+            <h2>Компетенции</h2>
+            <h3>Добавление нового тега:</h3>
+            <div class="add-tag-row">
+                <input class="add-tag-input" type="text" placeholder="Название тега (в форме текста)" id="add-tag-skill-input">
+                <label class="visually-hidden" for="add-tag-skill-input">Компетенция</label>
+                <input type="button" class="add-tag-button" value="Добавить">
+            </div>
+            <h3>Список всех тегов:</h3>
+            <ul class="all-tags-list">
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+                <li class="tag-item" data-id="1qerfmkFAFsfd">
+                    <div class="tag-item-name">#название-тега</div>
+                    <input class="tag-item-remove" type="button" value="x" data-id="1qerfmkFAFsfd">
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+</body>
+<footer class="main-footer">
+    <div class="footer-nav">
+        <a href="#">О системе</a>
+        <a href="#">Исполнители</a>
+        <a href="#">Заказы</a>
+        <a href="#">*Скоро на платформе</a>
+        <a class="disabled" href="#">Конкурсы*</a>
+        <a class="disabled" href="#">Вакансии*</a>
+        <a class="disabled" href="#">Стажировки*</a>
+    </div>
+    <div class="footer-logo">
+        <a class="footer-logo-link">
+            <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+        </a>
+        <a class="copyright" href="#">Политика конфиденциальности</a>
+        <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+    </div>
+</footer>
+</html>

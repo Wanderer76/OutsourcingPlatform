@@ -1,0 +1,103 @@
+version: '3.4'
+
+services:
+  #  rabbit_mq:
+  #    container_name: rabbitmq
+  #    image: rabbitmq:management
+  #    volumes:
+  #      - type: bind
+  #        source: ./rabbitmq-config/rabbitmq.config
+  #        target: /etc/rabbitmq/rabbitmq.config
+  #      - type: bind
+  #        source: ./rabbitmq-config/rabbitmq-defs.json
+  #        target: /etc/rabbitmq/rabbitmq-defs.json
+  #    ports:
+  #      - "5672:5672"
+  #      - "15672:15672"
+  #    environment:
+  #      - RABBITMQ_DEFAULT_USER=guest
+  #      - RABBITMQ_DEFAULT_PASS=guest
+  #  notificationapp:
+  #    #image: ${DOCKER_REGISTRY-}notificationapp
+  #    restart: always
+  #    build:
+  #      context: .
+  #      dockerfile: ./dockerfiles/Dockerfile-notification
+  #    depends_on:
+  #      - "db_auth"
+
+  object_storage1:
+    container_name: objectStorage1
+    image: minio/minio:latest
+    restart: unless-stopped
+    command: server /data --console-address :9001
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: artyom
+      MINIO_ROOT_PASSWORD: 12345678
+      #MINIO_ACCESS_KEY: "1dgylouCg60mixDjFlyM"
+      #MINIO_SECRET_KEY: "CccZExEbg9skZuH8J7OiKz7xFEVfffp1c4FwLz9A"
+    volumes:
+      - /minio/data:/data
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://158.160.110.86:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+  
+  outsourceplatformapp:
+    restart: unless-stopped
+    image: artyomte1243/outsource-backend
+    #    build:
+    #      context: .
+    #      dockerfile: ./dockerfiles/Dockerfile-backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DockerConnection=Host=localhost;Port=5432;Database=Test;Username=postgres;Password=1
+      # - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5288:80"
+      #- "80"
+      #- "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - "db_auth"
+  
+  #  objectstorageapp:
+  #    image: ${DOCKER_REGISTRY-}objectstorageapp
+  #    restart: always
+  #    build:
+  #      context: .
+  #      dockerfile: ./dockerfiles/Dockerfile-objectstorage
+  #    environment:
+  #      - ASPNETCORE_ENVIRONMENT=Development
+  #      #- ASPNETCORE_URLS=https://+:443;http://+:80
+  #    ports:
+  #      - "5114:80"
+  
+  db_auth:
+    container_name: database
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=Test
+    image: postgres:14.3-alpine
+    expose:
+      - "5432"
+  
+  client:
+    #    build:
+    #      context: ./front-end
+    #      dockerfile: ./Dockerfile
+    image: artyomte1243/outsource-client
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5288
+  

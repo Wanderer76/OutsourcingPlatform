@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый старт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+  <div class="logo">
+    <a href="#" class="logo-link header-logo">
+      <img class="header-logo" src="../images/header-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+
+    <div class="dropdown">
+      <a class="auth-link dropbtn" href="#"><div class="nav-username">@ADMIN12</div></a>
+      <div class="dropdown-content">
+        <a href="#">Личный кабинет</a>
+        <a href="#">Выход</a>
+      </div>
+    </div>
+  </div>
+
+  <input class="side-menu" type="checkbox" id="side-menu"/>
+  <label class="dash" for="side-menu"><span class="dash-line"></span></label>
+
+  <nav class="nav">
+    <ul class="nav-menu">
+      <li class="nav-for-mobile"><a href="#">Личный кабинет</a></li>
+      <li><a href="#">Панель администратора</a></li>
+      <li><a href="#">Список пользователей</a></li>
+      <li><a href="#">Редактор тэгов</a></li>
+      <li class="nav-for-mobile"><a href="#">Выход</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="popup-wrapper">
+  <div class="popup delete-project-popup">
+    <h2>Заблокировать пользователя</h2>
+    <div class="user-for-delete">
+      <div class="user-photo">
+        <img src="../images/empty-user.svg">
+      </div>
+      <div class="user-for-delete-name">Овчинников Александ Сергеевич</div>
+    </div>
+    <textarea
+            class="reason-for-deleting"
+            id="reason-for-deleting"
+            name="reason-for-deleting"
+            placeholder="Комментарий к блокировке пользователя."
+    ></textarea>
+    <div class="popup-delete-buttons buttons">
+      <a class="project-card-btn" href="#">Отмена</a>
+      <a class="project-card-btn" href="#">Заблокировать</a>
+    </div>
+  </div>
+</div>
+
+<section class="admin-panel">
+  <h1>Панель администратора</h1>
+  <div class="system-info">
+    <h2>Сведения о системе:</h2>
+    <div class="param-blocks">
+      <div class="param-blocks column">
+        <div class="param-item">Всего пользователей: 12288</div>
+        <div class="param-item">Заблокированных: 126</div>
+      </div>
+      <div class="param-blocks column">
+        <div class="param-item">Исполнителей: 8277</div>
+        <div class="param-item">Заказчиков: 466</div>
+      </div>
+    </div>
+  </div>
+  <div class="admin-user-search">
+    <h2>Поиск пользователя:</h2>
+    <div class="search-row">
+      <input class="admin-user-search-input" id="admin-user-search" placeholder="Введите имя или id пользователя">
+      <label class="visually-hidden" for="admin-user-search">Поиск среди пользователей</label>
+      <input class="user-search" type="button" value="Найти" id="user-search-btn">
+      <input class="user-search" type="button" value="Очистить" id="user-search-reset-btn">
+    </div>
+
+    <div class="search-results">
+      <h3>Результаты поиска</h3>
+      <ul class="list-result-items">
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Оченьдлиннаяфамилия Аристрах Аристархович</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+        <li class="result-item">
+          <div class="item-avatar">
+            <img width="45" height="45" src="../images/empty-user.svg" alt="Аватар пользователя">
+          </div>
+          <div class="user-data">
+            <div class="user-data-item">id: 7888940</div>
+            <div class="user-data-item">Иванов Максим Юрьевич</div>
+            <div class="user-data-item">Исполнитель</div>
+            <div class="user-data-item">Активный</div>
+          </div>
+          <input type="button" class="check-user" data-id="7888940" value="Открыть">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="search-user-card">
+    <a class="close-user-card" href="#"></a>
+    <h2>Просмотр пользователя c ID: 25667373</h2>
+    <div class="search-user-content">
+      <div class="user-left-block">
+        <div class="user-avatar">
+          <img src="../images/empty-user.svg" alt="Аватар пользователя">
+        </div>
+        <!--Первая кнопка меняется в зависимости от состояния-->
+        <!--<input type="button" data-id="25667373" class="user-control-btn" id="block-user" value="Заблокировать">-->
+        <input type="button" data-id="25667373" class="user-control-btn" id="unblock-user" value="Разблокировать">
+        <input type="button" data-id="25667373" class="user-control-btn" id="visit-user" value="Смотреть профиль">
+        <input type="button" data-id="25667373" class="user-control-btn" id="open-user-chats" value="Смотреть чаты">
+      </div>
+      <div class="user-right-block">
+        <div class="user-right-block-column">
+          <div class="auth__field">
+            <p>Роль</p>
+            <input class="auth_input" type="text" name="role" id="role" value="Исполнитель" readonly/>
+            <label class="sign-in__label visually-hidden" for="role">Роль</label>
+          </div>
+
+          <div class="auth__field">
+            <p>Статус</p>
+            <input class="auth_input" type="text" name="status" id="status" value="Заблокирован" readonly/>
+            <label class="sign-in__label visually-hidden" for="status">Статус</label>
+          </div>
+
+          <div class="auth__field">
+            <p>Количество заказов</p>
+            <input class="auth_input" type="text" name="order-count" id="order-count" value="6" readonly/>
+            <label class="sign-in__label visually-hidden" for="order-count">Количество заказов</label>
+          </div>
+
+          <div class="auth__field">
+            <p>Количество закрытых заказов</p>
+            <input class="auth_input" type="text" name="order-finished-count" id="order-finished-count" value="0" readonly/>
+            <label class="sign-in__label visually-hidden" for="order-finished-count">Количество закрытых заказов</label>
+          </div>
+
+          <div class="auth__field">
+            <p>Комментарий администратора</p>
+            <textarea class="admin-comment-textarea" name="admin-comment" id="admin-comment" readonly>Заблокан. Этот пользователь оставлял ссылки на фишинговые сайты
+            </textarea>
+            <label class="sign-in__label visually-hidden" for="admin-comment">Количество закрытых заказов</label>
+          </div>
+        </div>
+        <div class="user-right-block-column">
+          <div class="auth__field">
+            <p>Фамилия</p>
+            <input class="auth_input" type="text" placeholder="Фамилия" name="surname" id="surname" value="Овчинников" readonly/>
+            <label class="sign-in__label visually-hidden" for="surname">Фамилия</label>
+            <p class="input-error__text visually-hidden" id="surname-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Имя</p>
+            <input class="auth_input" type="text" placeholder="Имя" name="name" id="name" value="Александр" readonly/>
+            <label class="sign-in__label visually-hidden" for="name">Имя</label>
+            <p class="input-error__text visually-hidden" id="name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Отчество</p>
+            <input class="auth_input" type="text" placeholder="Отчество" name="second-name" id="second-name" value="Евгеньевич" readonly/>
+            <label class="sign-in__label visually-hidden" for="second-name">Отчество</label>
+            <p class="input-error__text visually-hidden" id="second-name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field field-check-box">
+            <input class="auth__field sign-in__check-box" type="checkbox" name="no-second-name" id="no-second-name" disabled="disabled"/>
+            <label class="sign-in__label" for="no-second-name">Нет отчества</label>
+          </div>
+
+          <div class="auth__field">
+            <p>Дата рождения</p>
+            <input class="auth_input" type="date" name="birth-date" id="birth-date" value="2001-06-01" readonly/>
+            <label class="sign-in__label visually-hidden" for="birth-date">Дата рождения</label>
+            <p class="input-error__text visually-hidden" id="birth-date-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Город</p>
+            <input class="auth_input" type="text" placeholder="Город" name="city" id="city" value="Екатеринбург" readonly/>
+            <label class="sign-in__label visually-hidden" for="city">Город</label>
+            <p class="input-error__text visually-hidden" id="city-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Телефон</p>
+            <input class="auth_input" type="tel" placeholder="+7-XXX-XXX-XX-XX" name="phone" id="phone" value="+7-914-655-94-55" readonly />
+            <label class="sign-in__label visually-hidden" for="phone">Телефон</label>
+            <p class="input-error__text visually-hidden" id="phone-error">Error text (Текст ошибки)!</p>
+          </div>
+        </div>
+        <div class="user-right-block-column">
+          <div class="auth__field">
+            <p>Username</p>
+            <input class="auth_input" type="text" placeholder="@username" name="username" id="username" value="@superuser1223" readonly/>
+            <label class="sign-in__label visually-hidden" for="username">Username</label>
+            <p class="input-error__text visually-hidden" id="username-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Email</p>
+            <input class="auth_input" type="email" placeholder="your@email.com" name="email" id="email" value="user1123@email.com" readonly/>
+            <label class="sign-in__label visually-hidden" for="email">Email</label>
+            <p class="input-error__text visually-hidden" id="email-error">Error text (Текст ошибки)!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+<footer class="main-footer">
+  <div class="footer-nav">
+    <a href="#">О системе</a>
+    <a href="#">Исполнители</a>
+    <a href="#">Заказы</a>
+    <a href="#">*Скоро на платформе</a>
+    <a class="disabled" href="#">Конкурсы*</a>
+    <a class="disabled" href="#">Вакансии*</a>
+    <a class="disabled" href="#">Стажировки*</a>
+  </div>
+  <div class="footer-logo">
+    <a class="footer-logo-link">
+      <img src="../images/footer-logo.svg" alt="Логотип платформы Первый Старт">
+    </a>
+    <a class="copyright" href="#">Политика конфиденциальности</a>
+    <a class="copyright" href="#">Первый старт© 2022 Все права защищены</a>
+  </div>
+</footer>
+</html>

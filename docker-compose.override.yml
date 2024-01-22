@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  outsourceplatformapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DockerConnection=Host=database;Port=5432;Database=Test;Username=postgres;Password=1
+      # - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5288:80"
+      #- "80"
+      #- "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

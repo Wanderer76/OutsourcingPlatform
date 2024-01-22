@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  object-storage
+  namespace: utyata-project
+  labels:
+    app:  object-storage
+    own: Utyata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: object-storage
+  template:
+    metadata:
+      labels:
+        project: object-storage
+        app: object-storage
+        service: object-storage
+    spec:
+      containers:
+        - name: object-storage
+          image: minio/minio:latest
+          ports:
+            - containerPort: 9000
+          env:
+            - MINIO_ACCESS_KEY=artyom
+            - MINIO_SECRET_KEY=12345678
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: object-storage
+  namespace: utyata-project
+spec:
+  selector:
+    project: object-storage
+  type: ClusterIP
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+    - port: 9090
+   # nodePort: 30007

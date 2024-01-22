@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый старт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<div class="auth-wrapper">
+  <div class="sign-up">
+    <div class="sign-up__content">
+      <a href="#" class="logo-link">
+        <img class="logo" src="../images/logo-auth-white.svg" alt="Логотип платформы Первый Старт">
+      </a>
+
+      <div class="sign-up__content content-text">
+        <h1>Исполнитель и заказчик — в чем разница?</h1>
+        <p>Помогаем талантливым начинающим исполнителям и потенциальным заказчикам найти друг друга</p>
+        <p>Заказчик — предприниматель или компания, которые нуждаются в выполнении каких-то задач с помощью исполнителей.</p>
+      </div>
+
+      <div class="roles">
+        <p>Выберите роль на платформе:</p>
+        <div class="roles-radio">
+          <input class="visually-hidden" type="radio" id="contractor" name="role" value="contractor">
+          <label class="role-btn" for="contractor">Исполнитель</label>
+          <input class="visually-hidden" type="radio" id="customer" name="role" value="customer">
+          <label class="role-btn checked" for="customer">Заказчик</label>
+        </div>
+      </div>
+
+    </div>
+
+    <form class="sign-up__form">
+      <h2>Регистрация <strong class="blue">заказчика</strong></h2>
+      <div class="form-blocks customer">
+        <div class="form-block form-block-2">
+          <div class="auth__field">
+            <p>Фамилия</p>
+            <input class="auth_input" type="text" placeholder="Фамилия" name="surname" id="surname" />
+            <label class="sign-in__label visually-hidden" for="surname">Фамилия</label>
+            <p class="input-error__text visually-hidden" id="surname-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Имя</p>
+            <input class="auth_input" type="text" placeholder="Имя" name="name" id="name" />
+            <label class="sign-in__label visually-hidden" for="name">Имя</label>
+            <p class="input-error__text visually-hidden" id="name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Отчество</p>
+            <input class="auth_input" type="text" placeholder="Отчество" name="second-name" id="second-name" />
+            <label class="sign-in__label visually-hidden" for="second-name">Отчество</label>
+            <p class="input-error__text visually-hidden" id="second-name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field field-check-box">
+            <input class="auth__field sign-in__check-box" type="checkbox" name="no-second-name" id="no-second-name" />
+            <label class="sign-in__label" for="no-second-name">Нет отчества</label>
+          </div>
+
+          <div class="auth__field">
+            <p>Название организации</p>
+            <input class="auth_input" type="text" placeholder="Название организации" name="company-name" id="company-name" />
+            <label class="sign-in__label visually-hidden" for="company-name">Название организации</label>
+            <p class="input-error__text visually-hidden" id="company-name-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Адрес</p>
+            <input class="auth_input" type="text" placeholder="Адрес" name="address" id="address" />
+            <label class="sign-in__label visually-hidden" for="address">Адрес</label>
+            <p class="input-error__text visually-hidden" id="address-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>ИНН</p>
+            <input class="auth_input" type="text" placeholder="XXX-XXX-XXXX" name="inn" id="inn" />
+            <label class="sign-in__label visually-hidden" for="inn">Индивидуальный налоговый номер</label>
+            <p class="input-error__text visually-hidden" id="inn-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field field-check-box">
+            <input class="auth__field sign-in__check-box" type="checkbox" name="no-second-name" id="own-business-check" />
+            <label class="sign-in__label" for="own-business-check">У меня ИП</label>
+          </div>
+        </div>
+
+        <div class="form-block form-block-2">
+          <div class="auth__field">
+            <p>Username</p>
+            <input class="auth_input" type="text" placeholder="@username" name="username" id="username" />
+            <label class="sign-in__label visually-hidden" for="username">Username</label>
+            <p class="input-error__text visually-hidden" id="username-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field">
+            <p>Телефон</p>
+            <input class="auth_input" type="tel" placeholder="+7-XXX-XXX-XX-XX" name="phone" id="phone" />
+            <label class="sign-in__label visually-hidden" for="phone">Телефон</label>
+            <p class="input-error__text visually-hidden" id="phone-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="auth__field error">
+            <p>Email</p>
+            <input class="auth_input" type="email" placeholder="your@email.com" name="email" id="email" value="wrong2email.com"/>
+            <label class="sign-in__label visually-hidden" for="email">Email</label>
+            <p class="input-error__text visually-hidden" id="email-error">Error text (Текст ошибки)!</p>
+          </div>
+
+          <div class="password-block">
+            <div class="auth__field password">
+              <p class="error">Пароль</p>
+              <div class="password-with-control">
+                <input class="auth_input error" type="password" placeholder="password" name="user-password" id="user-password" />
+                <a href="#" class="password-control"></a>
+              </div>
+              <label class="sign-in__label visually-hidden" for="user-password">Пароль</label>
+            </div>
+
+            <div class="auth__field password-repeat">
+              <p class="error">Повторите пароль</p>
+              <div class="password-with-control">
+                <input class="auth_input error" type="password" placeholder="password" name="user-password-repeat" id="user-password-repeat" />
+                <a href="#" class="password-control"></a>
+              </div>
+              <label class="sign-in__label visually-hidden" for="user-password-repeat">Повторите пароль</label>
+              <p class="input-error__text visually-hidden" id="password-error">Error text (Текст ошибки)!</p>
+            </div>
+          </div>
+
+          <button class="auth__btn" type="submit">Зарегистрироваться</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+

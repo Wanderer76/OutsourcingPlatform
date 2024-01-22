@@ -1,0 +1,50 @@
+stages:
+  - build
+  - deploy
+
+#tonen glpat-21Km_nbsen8Pf9fBy8WG
+
+build-images:
+  stage: build
+  image: docker:latest
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -t hub.66bit.ru/urfu2022/rtf/outsourcing-platform/backend -f dockerfiles/Dockerfile-backend .
+    - docker build -t hub.66bit.ru/urfu2022/rtf/outsourcing-platform/objectstorageapp -f dockerfiles/Dockerfile-objectstorage .
+    - docker build -t hub.66bit.ru/urfu2022/rtf/outsourcing-platform/frontend front-end/
+    - docker push hub.66bit.ru/urfu2022/rtf/outsourcing-platform/backend
+    - docker push hub.66bit.ru/urfu2022/rtf/outsourcing-platform/objectstorageapp
+    - docker push hub.66bit.ru/urfu2022/rtf/outsourcing-platform/frontend
+  after_script:
+    - docker logout $CI_REGISTRY
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev-2.0"
+      #when: manual
+
+deploy-to-kubernetes:
+  stage: deploy
+  image: hub.66bit.ru/shared/stk8s:1.26.2
+  script:
+    #- kubectl delete -f objectstorageapp-deployment.yaml
+    - kubectl delete -f back-deployment.yaml
+    - kubectl delete -f front-deployment.yaml
+    #- kubectl delete -f db-deployment.yaml
+    #- kubectl create namespace utyata-project
+    #- kubectl delete secret outsorce-secret
+    #- kubectl create secret docker-registry outsorce-secret --docker-server=hub.66bit.ru --docker-username=ateplinsky --docker-password=glpat-21Km_nbsen8Pf9fBy8WG --docker-email=ateplinsky@mail.ru --namespace=utyata-project
+    #- kubectl get secret outsorce-secret --output=yaml
+    #- kubectl delete configmap react-env --namespace=utyata-project
+    #- kubectl create configmap react-env --from-literal=REACT_APP_API_URL=https://outsourcing.stk8s.66bit.ru --from-literal=REACT_APP_File_Storage_URL=https://outsourcing.stk8s.66bit.ru --namespace=utyata-project
+    - kubectl apply -f db-deployment.yaml
+    #- kubectl apply -f objectstorageapp-deployment.yaml
+    - kubectl apply -f back-deployment.yaml
+    - kubectl apply -f front-deployment.yaml
+    - kubectl get pods --namespace=utyata-project
+    - kubectl get ingress -A
+    - kubectl describe ingress ingress-host --namespace=utyata-project
+    - kubectl get svc --namespace=utyata-project
+    #- kubectl logs objectstorageapp-69495c9b77-9bcxv --namespace=utyata-project
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev-2.0"
+      #when: manual
